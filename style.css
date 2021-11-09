@@ -1,0 +1,34 @@
+body {
+    font-family: sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.result {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.resultComponent {
+    margin: 5px auto;
+}
+
+.hackerImage {
+    opacity: 0;
+}
+
+.weAreComing {
+    position: fixed;
+    opacity: 0;
+    color: red;
+    left: auto;
+    top: auto;
+    right: auto;
+    bottom: auto;
+    font-size: 50px;
+    transition: 8000ms;
+}
