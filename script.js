@@ -25,7 +25,7 @@ const weAreComing = document.getElementById("weAreComing")
 
 
 function getAdress() {
-    fetch(`https://ip-api.com/json/${userIp}?fields=status,message,continent,country,countryCode,region,regionName,city,district,zip,isp,query`)
+    fetch(`http://ip-api.com/json/${userIp}?fields=status,message,continent,country,countryCode,region,regionName,city,district,zip,isp,query`)
         .then(response => response.json())
         .then(response => {
             status.innerText = `status: ${response.status}`;
