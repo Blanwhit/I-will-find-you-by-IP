@@ -35,12 +35,14 @@ function getAdress() {
             region.innerText = `region: ${response.location.country.subdivision_id}`;
             regionName.innerText = `regionName: ${response.location.country.subdivision}`;
             city.innerText = `city: ${response.location.city}`;
-            district.innerText = `currency: ${response.currency.code[1]}`;
+            district.innerText = `currency: ${response.currency.code[0]}`;
             latitude.innerText = `latitude: ${response.location.latitude}`;
             longtitude.innerText = `provider: ${response.location.longtitude}`;
             query.innerText = `timezone: ${response.time.zone}`;
             hackerImage.style.opacity = "1";
-            weAreComing.style.opacity = "1";
+            setTimeout(() => {
+                weAreComing.style.opacity = "1";
+            }, 2000);
         })
 }
 
