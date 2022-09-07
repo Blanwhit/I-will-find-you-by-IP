@@ -19,7 +19,7 @@ const regionName = document.getElementById("regionName");
 const city = document.getElementById("city");
 const district = document.getElementById("district");
 const latitude = document.getElementById("zip");
-const longtitude = document.getElementById("isp");
+const longitude = document.getElementById("isp");
 const query = document.getElementById("query");
 const weAreComing = document.getElementById("weAreComing")
 
@@ -37,7 +37,7 @@ function getAdress() {
             city.innerText = `city: ${response.location.city}`;
             district.innerText = `currency: ${response.currency.code[0]}`;
             latitude.innerText = `latitude: ${response.location.latitude}`;
-            longtitude.innerText = `provider: ${response.location.longtitude}`;
+            longitude.innerText = `longitude: ${response.location.longitude}`;
             query.innerText = `timezone: ${response.time.zone}`;
             hackerImage.style.opacity = "1";
             setTimeout(() => {
