@@ -40,9 +40,7 @@ function getAdress() {
             longitude.innerText = `longitude: ${response.location.longitude}`;
             query.innerText = `timezone: ${response.time.zone}`;
             hackerImage.style.opacity = "1";
-            setTimeout(() => {
-                weAreComing.style.opacity = "1";
-            }, 2000);
+            weAreComing.style.opacity = "1";
         })
 }
 
