@@ -15,6 +15,7 @@ body {
 
 .resultComponent {
     margin: 5px auto;
+    transition: 500ms;
 }
 
 .hackerImage {
