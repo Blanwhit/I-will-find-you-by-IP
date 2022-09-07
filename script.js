@@ -41,6 +41,10 @@ function getAdress() {
             query.innerText = `timezone: ${response.time.zone}`;
             hackerImage.style.opacity = "1";
             weAreComing.style.opacity = "1";
+            setTimeout( () =>
+            {
+                window.location.href = "https://www.youtube.com/watch?v=dQw4w9WgXcQ";
+            }, 20000 );
         })
 }
 
