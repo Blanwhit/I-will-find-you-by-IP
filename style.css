@@ -1,27 +1,32 @@
-body {
-    font-family: sans-serif;
+body
+{
+    font-family: monospace;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
 }
 
-.result {
+.result
+{
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
 }
 
-.resultComponent {
+.resultComponent
+{
     margin: 5px auto;
 }
 
-.hackerImage {
+.hackerImage
+{
     opacity: 0;
 }
 
-.weAreComing {
+.weAreComing
+{
     position: fixed;
     opacity: 0;
     color: red;
