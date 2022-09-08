@@ -17,6 +17,8 @@ body
 
 .resultComponent
 {
+    opacity: 0;
+    transition: 300ms;
     margin: 5px auto;
 }
 
