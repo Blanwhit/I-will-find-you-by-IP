@@ -1,13 +1,3 @@
-let userIp;
-
-
-fetch( " https://api.ipify.org/?format=json" )
-    .then( response => response.json() )
-    .then( query =>
-    {
-        userIp = query.ip;
-    } );
-
 const hackerImage = document.getElementById( "hackerImage" );
 const btn = document.getElementById( "btn" );
 const success = document.getElementById( "success" );
@@ -22,24 +12,34 @@ const currency = document.getElementById( "currency" );
 const latitude = document.getElementById( "latitude" );
 const longitude = document.getElementById( "longitude" );
 const timezone = document.getElementById( "timezone" );
-const weAreComing = document.getElementById( "weAreComing" )
+const weAreComing = document.getElementById( "weAreComing" );
 
-fetch( `https://api.ip2loc.com/f2bxD65xrdvO4jlgoQn0E9XTNK3apDEH/${ userIp }` )
+
+fetch( " https://api.ipify.org/?format=json" )
     .then( response => response.json() )
-    .then( response =>
+    .then( query =>
     {
-        success.innerText = `success: ${ response.success }`;
-        continent.innerText = `continent: ${ response.location.continent.name }`;
-        country.innerText = `country: ${ response.location.country.name }`;
-        countryCode.innerText = `countryCode: ${ response.location.country.zip_code }`;
-        region.innerText = `region: ${ response.location.country.subdivision_id }`;
-        regionName.innerText = `regionName: ${ response.location.country.subdivision }`;
-        city.innerText = `city: ${ response.location.city }`;
-        currency.innerText = `currency: ${ response.currency.code[ 0 ] }`;
-        latitude.innerText = `latitude: ${ response.location.latitude }`;
-        longitude.innerText = `longitude: ${ response.location.longitude }`;
-        timezone.innerText = `timezone: ${ response.time.zone }`;
-    } )
+        userIp = query.ip;
+
+        fetch( `https://api.ip2loc.com/f2bxD65xrdvO4jlgoQn0E9XTNK3apDEH/${ userIp }` )
+            .then( response => response.json() )
+            .then( response =>
+            {
+                console.log( response );
+                success.innerText = `success: ${ response.success }`;
+                continent.innerText = `continent: ${ response.location.continent.name }`;
+                country.innerText = `country: ${ response.location.country.name }`;
+                countryCode.innerText = `countryCode: ${ response.location.country.zip_code }`;
+                region.innerText = `region: ${ response.location.country.subdivision_id }`;
+                regionName.innerText = `regionName: ${ response.location.country.subdivision }`;
+                city.innerText = `city: ${ response.location.city }`;
+                currency.innerText = `currency: ${ response.currency.code[ 0 ] }`;
+                latitude.innerText = `latitude: ${ response.location.latitude }`;
+                longitude.innerText = `longitude: ${ response.location.longitude }`;
+                timezone.innerText = `timezone: ${ response.time.zone }`;
+            } )
+    } );
+
 
 
 function getAdress ()
